@@ -1,0 +1,38 @@
+<core:FragmentDefinition
+	xmlns="sap.ui.comp.valuehelpdialog"
+	xmlns:m="sap.m"
+	xmlns:fb="sap.ui.comp.filterbar"
+	xmlns:core="sap.ui.core">
+	<ValueHelpDialog
+		title="Delivery"
+		ok=".onValueHelpOkPress"
+		cancel=".onValueHelpCancelPress"
+		afterClose=".onValueHelpAfterClose"
+		supportRanges="true"
+		key="VBELN">
+		<filterBar>
+			<fb:FilterBar advancedMode="true" search=".onFilterBarSearch" isRunningInValueHelpDialog="true">
+				<fb:filterGroupItems>
+					<fb:FilterGroupItem
+						groupName="__$INTERNAL$"
+						name="VBELN"
+						label="Delivery No"
+						visibleInFilterBar="true">
+						<fb:control>
+							<m:Input name="VBELN" />
+						</fb:control>
+					</fb:FilterGroupItem>
+					<!-- <fb:FilterGroupItem
+						groupName="__$INTERNAL$"
+						name="POSNR"
+						label="Delivery Item"
+						visibleInFilterBar="true">
+						<fb:control>
+							<m:Input name="POSNR" />
+						</fb:control>
+					</fb:FilterGroupItem> -->
+				</fb:filterGroupItems>
+			</fb:FilterBar>
+		</filterBar>
+	</ValueHelpDialog>
+</core:FragmentDefinition>

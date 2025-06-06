@@ -1,0 +1,25 @@
+<core:FragmentDefinition xmlns='sap.m' xmlns:core='sap.ui.core' xmlns:f='sap.ui.layout.form'
+ xmlns:html="http://www.w3.org/1999/xhtml">
+<!-- <Toolbar >
+<ToolbarSpacer ></ToolbarSpacer>
+<Button icon="sap-icon://filter" press="F4Help"></Button> 
+</Toolbar> -->
+<f:SimpleForm >
+<Title text="Delivery Data">
+</Title>
+<Label text="DEVICE NO"></Label>
+<Text text="{ZZDEVICENO}"></Text>
+<Label text="Material"></Label>
+<Text text="{matnr}"></Text>
+<Label text="Batch"></Label>
+<Text text="{CHARG}"></Text>
+<Label text="Text"></Label>
+<Text text="{Text}"></Text>
+<!-- <Label text="Supplier Email"></Label>
+<Text text="DHAVAL.BAROT@ARTHREX.COM"></Text>
+<Label text="Supplier Phone"></Label>
+<Text text="{778-873-1177"></Text> 
+<Label text="Location"></Label>
+<Text text="SURREY"></Text> -->
+</f:SimpleForm>
+</core:FragmentDefinition>

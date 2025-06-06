@@ -1,0 +1,23 @@
+<html>
+    <head>
+     
+        <script src="https://ui5.sap.com/resources/sap-ui-core.js"
+        data-sap-ui-libs="sap.m"
+        data-sap-ui-theme="sap_belize_plus"
+        data-sap-ui-resourceroots='{
+            "odataui5project":"./"
+        }'
+        data-sap-ui-bindingSyntax="complex"></script>
+                <script>
+                   var oComponent = new sap.ui.core.ComponentContainer({
+                       name:"odataui5project"
+                   });
+                   oComponent.placeAt("oContent");
+                </script>
+                <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+                <link rel="stylesheet" type="text/css" href="style/mycss.css">
+    </head>
+    <body class="sapUiBody">
+        <div id="oContent"></div>
+    </body>
+</html>

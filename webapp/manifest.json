@@ -1,0 +1,124 @@
+{
+    "sap.app": {
+        "id": "odataui5project",
+        "type": "application",
+        "applicationVersion": {
+            "version": "1.0.0"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "i18n": "i18n/i18n.properties",
+        "ach": "FIN-ACC-AP",
+        "tags": {
+            "keywords": ["innotrack","delivery","tracker"]
+        },
+        "dataSources": {
+            "mainService": {
+                "uri": "/sap/opu/odata/SAP/ZINNOTRACK_SRV/",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "2.0"
+                }
+            }
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "deviceTypes":{
+            "desktop": true,
+            "phone": true,
+            "tablet": true
+        },
+        "fullWidth": true,
+        "supportedThemes": [
+            "sap_fiori3",
+            "sap_fiori3_dark"
+        ]
+    },
+    "sap.ui5":{
+        "library": {
+            "css": "style/mycss.css"
+        },
+        "resources": {
+            "css": [{
+                "uri": "style/mycss.css"
+            }]
+        },
+        "dependencies": {
+            "minUI5Version": "1.84.28",
+            "libs": {
+                "sap.m": {"minVersion": "1.84.28"},
+                "sap.ui.layout": {"minVersion": "1.84.28"}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "rootView":{
+            "viewName": "odataui5project.view.App",
+            "type": "XML",
+            "id": "idRootView"
+        },
+        "routing": {
+            "config":{
+                "viewPath": "odataui5project.view",
+                "viewType": "XML",
+                "controlId": "idAppCon",
+                "clearControlAggregation": true
+            },
+            "routes":[{
+                "pattern": "",
+                "name": "home",
+                "target":["narendra"]
+            },
+            {
+                "pattern": "DelTextSet/{vbeln}",
+                "name": "delivery",
+                "target":["trump"]
+
+            },
+            {
+                "pattern": "DelMapSet/{VBELN}",
+                "name": "map",
+                "target":["obama"]
+            }],
+            "targets": {
+                "narendra": {
+                    "viewName": "View1",
+                    "viewId": "idView1",
+                    "controlAggregation": "pages"
+                },
+                "trump": {
+                    "viewName": "View2",
+                    "viewId": "idView2",
+                    "controlAggregation": "pages"
+                },
+                "obama": {
+                    "viewName": "View3",
+                    "viewId": "idView3",
+                    "controlAggregation": "pages"
+                }
+                
+              
+            }
+        },
+        "models": {
+            "":{
+                "type": "sap.ui.model.odata.v2.ODataModel",
+                "dataSource": "mainService",
+                "settings": {}
+            },
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleUrl": "i18n/i18n.properties"
+                }
+            },
+            "json":{
+                "type": "sap.ui.model.json.JSONModel",
+                "uri": "mockdata/jModel.json"
+            }
+        }
+    }
+}

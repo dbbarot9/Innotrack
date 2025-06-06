@@ -1,0 +1,61 @@
+<mvc:View controllerName="odataui5project.controller.View3"
+	xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	xmlns:vbm="sap.ui.vbm" xmlns:l="sap.ui.layout" height="100%"
+	displayBlock="true">
+	<Page id="idPage1" title="Delivery Data">
+<headerContent>
+<Image ariaDetails="detailsActiveImage" src="./IMAGE/logo.png" width="" height="5em" mode="Image"></Image> 
+<Button id="idBtn1" text="Back" icon="sap-icon://arrow-right" press="callView1"></Button>
+</headerContent>
+	<l:FixFlex class="fixFlexFixedSize">
+		<l:fixContent>
+			<Panel expandable="true" expanded="{= !${device>/system/phone} }"
+				headerText="Description">
+				<headerToolbar>
+					<Toolbar>
+						<Title text="Description" />
+						<ToolbarSpacer />
+						<Button id="btnLegend" icon="sap-icon://legend" press="onPressLegend"
+							tooltip="Hide legend" />
+						<Button id="btnResize" icon="sap-icon://resize" press="onPressResize"
+							tooltip="Minimize" />
+					</Toolbar>
+				</headerToolbar>
+				<content>
+					<VBox class="sapUiTinyMargin">
+						<Text
+							text="A street level route shows the detailed route between two or more points of interest like a navigation system does. The default route is a solid line without arrow heads. The visualization can be adapted by the application: adding arrow heads, dashed/dotted lines, route width, colors, and borderline." />
+						<Text class="sapUiTinyMarginTop" text="See also: " />
+	
+					</VBox>
+				</content>
+			</Panel>
+		</l:fixContent>
+		<l:flexContent>
+			<vbm:GeoMap id="vbi" width="100%" xmlns:l="sap.ui.layout"
+				height="100%" initialPosition="{json>/jModel/LATITUDE}" initialZoom="0"
+				openWindow="onOpenDetail" closeWindow="onCloseDetail">
+			
+				  <vbm:Routes id="mapRoute" posChangeable="true" items="">
+					<vbm:Route id="mapRoute1" position="{json>/jModel/LOCATION}"
+						tooltip="Long Route" labelText="" end="0"
+						start="1" color="rgba(92,186,230,1.0)" colorBorder="rgb(255,300,255)" directionIndicator="true"
+						hotDeltaColor="RHLSA(1,1,1,0.6)" click="onClickRoute" contextMenu="onContextMenuRoute" />
+				</vbm:Routes>
+				 <vbm:Spots>
+					<vbm:Spot id="Spot1" position="{json>/jModel/LATITUDE}"
+						tooltip="{json>/jModel/ADDRESS1}" />
+					<vbm:Spot id="Spot2" position="{json>/jModel/LONGITUDE}"
+						tooltip="{json>/jModel/ADDRESS2}" /> 
+				</vbm:Spots> 
+				<!-- <vbm:legend>
+					<vbm:Legend id="legend" caption="Street level route"
+						items="{/Legend}">
+						<vbm:LegendItem text="{text}" color="{color}" />
+					</vbm:Legend>
+				</vbm:legend> -->
+			</vbm:GeoMap>
+		</l:flexContent>
+	</l:FixFlex>
+	</Page>
+</mvc:View>

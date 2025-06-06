@@ -1,0 +1,28 @@
+.sapMListTblCell.cellBorderRight {
+	border-right: 1px solid lightgray;
+}
+
+.sapMListTblCell.cellBorderLeft {
+	border-left: 1px solid lightgray;
+}
+.bodyPage {
+	background-color: #c2dde6
+}
+.backgroundColor {
+	/* border-top: 2px solid #090909;
+    border-right: 2px solid #e05915;
+	border-left: 2px solid #e05915;
+	
+	font-family: 'Courier New', Courier, monospace; */
+	border-bottom: 1px solid #080808;
+	font-weight: bold;
+  }
+  .column {
+	/* border-top: 1px solid #b0ccf6;
+    border-right: 1px solid #b0ccf6;
+	border-left: 1px solid #b0ccf6;
+	border-bottom: 1px solid #080808; */
+	background-color: #c2dde6;
+	font-weight: normal;
+  }
+  

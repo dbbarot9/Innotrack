@@ -1,0 +1,130 @@
+<mvc:View xmlns:mvc='sap.ui.core.mvc' xmlns:core="sap.ui.core"
+xmlns='sap.m'
+xmlns:f='sap.ui.layout.form'
+controllerName="odataui5project.controller.View2">
+<Page id="idPage" title="Delivery Data">
+<headerContent>
+<Image ariaDetails="detailsActiveImage" src="./IMAGE/logo.png" width="" height="5em" mode="Image"></Image> 
+<Button id="idBtn" text="Back" icon="sap-icon://arrow-right" press="callView1"></Button>
+</headerContent>
+  <Panel expandable="true" headerText="Delivery Details:" width="auto"> 
+		<content> 
+			<Table id="Detail" alternateRowColors="true"  inset="false" items="{/DeliveryTextSet}" 
+			growing="true" growingScrollToLoad="true" sticky="HeaderToolbar" fixedLayout="true"> 
+		<headerToolbar>
+				 <OverflowToolbar>
+					<Button icon="sap-icon://order-status" press="onExport" type="Emphasized" text="Export to Excel"/> 
+					</OverflowToolbar>
+					</headerToolbar>
+			
+		<columns >
+			<Column
+				width="12em" demandPopin="true" >
+				<header><Text text="{i18n>HDR_Delivery}" wrapping="true" wrappingType="Normal" class='column'/></header>
+			</Column>
+			<Column
+				width="12em" demandPopin="true" >
+				<header><Text text="{i18n>HDR_POSNR}"/></header>
+			</Column>
+			<Column
+				width="12em" demandPopin="true" >
+				<header><Text text="{i18n>HDR_MATNR}"/></header>
+			</Column>
+			<Column
+				width="12em" demandPopin="true" >
+				<header><Text text="Device"/></header>
+			</Column>
+			<Column
+				width="12em" demandPopin="true">
+				<header><Text text="Temp"/></header>
+			</Column>
+			 <Column
+				width="12em" demandPopin="true">
+				<header><Text text="Date"/></header>
+			</Column>
+			<Column
+				width="12em" demandPopin="true">
+				<header><Text text="Latitude"/></header>
+			</Column>
+			<Column
+				width="12em" demandPopin="true">
+				<header><Text text="Longitude"/></header>
+			</Column>
+			<Column
+				width="12em" demandPopin="true">
+				<header><Text text="Location"/></header>
+			</Column>
+			<Column
+				width="12em" demandPopin="true">
+				<header><Text text="Status"/></header>
+			</Column> 
+			<Column
+				width="12em" demandPopin="true">
+				<header><Text text="BatchNo"/></header>
+			</Column>
+			<Column
+				width="12em" demandPopin="true">
+				<header><Text text="Light"/></header>
+			</Column>
+			<!-- <Column
+				width="12em" demandPopin="true">
+				<header><Text text="Orientation" /></header>
+			</Column> -->
+			<Column
+				width="12em" demandPopin="true" >
+				<header><Text text="Battery"/></header>
+			</Column>
+			<Column
+				width="12em" demandPopin="true" >
+				<header><Text text="HU"/></header>
+			</Column>
+			<Column
+				width="12em" demandPopin="true" >
+				<header><Text text="Pressure"/></header>
+			</Column>
+			<Column
+				width="12em" demandPopin="true" >
+				<header><Text text="Humidity"/></header>
+			</Column>
+			<Column
+				width="12em" demandPopin="true" >
+				<header><Text text="Accelometer"/></header>
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem vAlign="Middle" id="idColoumn1" class='column'>
+				<cells>
+					<!-- <ObjectIdentifier
+						title="Delivery:{VBELN} Item:{POSNR}"
+						text="{TEXT}"/>	 -->
+						<Text text="{VBELN}" id="idVbeln" ></Text>
+						<Text text="{POSNR}" id="idPosnr"></Text>
+						<Text text="{matnr}" id="idMatnr"></Text>
+						<Text text="{Device}"></Text>	
+						<Text text="{Temp}" id="idTemp1"/>
+					 <Text text="{date}" id="idDate1"/>
+					<Text text="{latitude}" id="idLatitude1"/>
+					<Text text="{longitude}" id="idLongitude1"/>
+					<Text text="{location}" id="idLocation1"/>
+					<Text text="{status}" id="idStatus1"/> 
+					<Text text="{batchno}" id="idBatch1"/>
+					<Text text="{light}" id="idLight1"/>
+					<Text text="{orientation}" id="idorientation1"/>
+					<Text text="{battery}" id="idBattery1"/>
+					<Text text="{hu}" id="idHu1"/>
+					<Text text="{pressure}" id="idPressure1"/>
+					<Text text="{humidity}" id="idHumidity1"/>
+					<Text text="{ACCELEROMETER}" id="idAccelometer1"/>
+					
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+		 </content> 
+	 </Panel> 
+
+<footer>
+<Toolbar><ToolbarSpacer></ToolbarSpacer>
+</Toolbar></footer>
+</Page>
+</mvc:View>
